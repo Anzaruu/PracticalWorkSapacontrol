@@ -14,8 +14,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: var(--main-font);
-    background-color: var(--bg-color);
     color: var(--text-color);
+    background-color: var(--bg-color-grey);
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -28,6 +28,6 @@ picture {
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
 }

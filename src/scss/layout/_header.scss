@@ -1,0 +1,16 @@
+.header {
+    margin: 20px 100px;
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    background-color: var(--bg-color-white);
+    border-radius: 50px;
+
+    &__contacts {
+        margin-left: auto;
+    }
+
+    &__countries{
+        margin-left: 24px;
+    }
+}

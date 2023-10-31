@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,13 +23,74 @@
     <!-- Styles -->
     @@include('layout/_styles.html')
 </head>
+
 <body>
     <!-- Header -->
     @@include('layout/_header.html')
     <!-- End Header -->
 
     <!-- Main -->
-    <main class="main"></main>
+    <main class="main">
+        <!-- Offer -->
+        <section class="offer">
+            <div class="container">
+                <div class="offer__content">
+                    <h1 class="offer__title h1">ПРИЕМКА КВАРТИРЫ В НОВОСТРОЙКЕ</h1>
+                    <p class="offer__text text-info">Закажите приемку квартиры и устраните дефекты за счет застройщика
+                    </p>
+                    <input type="range"  min="20" max="100">
+                    <button class="offer__btn btn reset-btn" type="button">Узнать стоимость</button>
+                    <div class="offer__img">
+                        <picture>
+                            <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
+                            <source srcset="./assets/images/offer.webp" type="image/webp"> -->
+                            <img src="/assets/images/manpreview.png" alt="Изображение мужчины">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <ul class="offer__img-contacts reset-list">
+                <li>
+                    <a class="reset-link" href="#">
+                        <picture>
+                            <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
+                            <source srcset="./assets/images/offer.webp" type="image/webp"> -->
+                            <img src="/assets/images/phone.png" alt="Изображение телефона">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a class="reset-link" href="#">
+                        <picture>
+                            <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
+                                <source srcset="./assets/images/offer.webp" type="image/webp"> -->
+                            <img src="/assets/images/tg.png" alt="Изображение телеграма">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a class="reset-link" href="#">
+                        <picture>
+                            <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
+                                <source srcset="./assets/images/offer.webp" type="image/webp"> -->
+                            <img src="/assets/images/WhatsApp.png" alt="Изображение вотсапа">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a class="reset-link" href="#">
+                        <picture>
+                            <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
+                                <source srcset="./assets/images/offer.webp" type="image/webp"> -->
+                            <img src="/assets/images/message.png" alt="Изображение сообщения">
+                        </picture>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- End Offer -->
+
+    </main>
     <!-- End Main -->
 
     <!-- Footer -->
@@ -38,4 +100,5 @@
     <!-- Scripts -->
     @@include('layout/_scripts.html')
 </body>
+
 </html>

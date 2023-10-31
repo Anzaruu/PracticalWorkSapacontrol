@@ -1,0 +1,51 @@
+.offer {
+    position: relative;
+    display: flex;
+    padding: 80px 100px;
+    align-items: flex-end;
+    gap: 64px;
+    align-self: stretch;
+
+    &__content {
+        position: relative;
+        height: 502px;
+        gap: 64px;
+    }
+
+    &__title {
+        position: relative;
+        z-index: 2;
+        width: 714px;
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+
+    &__text {
+        position: relative;
+        z-index: 2;
+        width: 600px;
+        margin-bottom: 40px;
+        color: var(--text-color-addicional);
+    }
+
+    &__btn {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__img {
+        position: absolute;
+        z-index: 1;
+        width: 402px;
+        height: 402px;
+        bottom: 200px;
+        right: 60px;
+    }
+
+    &__img-contacts {
+        position: absolute;
+        z-index: 1;
+        top: 350px;
+        right: 80px;
+    }
+}

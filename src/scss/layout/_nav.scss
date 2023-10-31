@@ -1,10 +1,10 @@
 .nav {
     display: flex;
     align-items: center;
-    gap: 170px;
+    gap: 20px;
 
     &__logo {
-        width: 60px;
+        width: 180px;
     }
 }
 
@@ -12,21 +12,38 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px;
 
     &__link {
         color: var(--text-color);
 
-        &:hover {
+        &:hover{
+            color: var(--primary-color);
+        }
+    }
+
+    & li:hover .submenu{
+        padding: 40px 60px;
+    }
+}
+
+.submenu {
+    display: flex;
+    top: 100%;
+    left: 0;
+    gap: 40px;
+
+    &__link{
+        color: var(--text-color);
+
+        &:hover{
             color: var(--primary-color);
         }
     }
 }
 
 .contacts {
-    display: flex;
     align-items: end;
-    flex-direction: column;
     flex-wrap: wrap;
     gap: 4px;
 
@@ -37,4 +54,10 @@
             color: var(--primary-color);
         }
     }
+}
+
+.countries {
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 4px;
 }

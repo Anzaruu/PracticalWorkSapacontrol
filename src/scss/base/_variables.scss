@@ -6,10 +6,14 @@ $mobile-bp: 559.98px;
 
 :root {
     // Colors
-    --bg-color: #fff;
+    --bg-color-grey: #EFF1F4;
+    --bg-color-blue: #21A0AA;
+    --bg-color-white: #fff;
     --primary-color: #F16D22;
-    --text-color: #000;
+    --text-color: #20304A;
+    --text-color-addicional: #8A99B5;
+    --text-color-light: #fff;
 
     // Fonts
-    --main-font: "Inter", "Arial", sans-serif;
+    --main-font: "Golos", "Arial", sans-serif;
 }
