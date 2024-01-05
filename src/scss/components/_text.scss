@@ -8,6 +8,10 @@
     &_md {
         font-size: 24px;
     }
+
+    &_bold{
+        font-weight: 600;
+    }
 }
 
 .text {
@@ -16,4 +20,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: 175%;
+}
+
+.text-addiction {
+    margin: 0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
 }

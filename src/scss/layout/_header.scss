@@ -6,11 +6,36 @@
     background-color: var(--bg-color-white);
     border-radius: 50px;
 
-    &__contacts {
+    &__phone{
+        display: flex;
         margin-left: auto;
     }
 
     &__countries{
         margin-left: 24px;
+    }
+}
+
+.countries{
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 4px;
+    &__link{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.phone{
+    color: var(--text-color-addicional);
+    
+    &__link{
+        color: var(--text-color);
+        width: auto;
+        height: auto;
+        transition: all 0.2s ease-in-out;
+        &:hover{
+            color: var(--primary-color);
+        }
     }
 }

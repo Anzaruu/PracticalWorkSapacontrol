@@ -16,48 +16,38 @@
 
     &__link {
         color: var(--text-color);
+        transition: all 0.2s ease-in-out;
 
         &:hover{
             color: var(--primary-color);
         }
+        
+        &:hover .menu__link-arrow{
+           fill: var(--primary-color);
+           transform: rotate(180deg);
+        }
     }
 
-    & li:hover .submenu{
-        padding: 40px 60px;
+    &__link-arrow{
+        width: 10px;
+        height: 6px;
+        transition: all 0.2s ease-in-out;
     }
 }
 
 .submenu {
-    display: flex;
+    display: none;
+    position: relative;
     top: 100%;
     left: 0;
     gap: 40px;
 
     &__link{
         color: var(--text-color);
+        transition: all 0.2s ease-in-out;
 
         &:hover{
             color: var(--primary-color);
         }
     }
-}
-
-.contacts {
-    align-items: end;
-    flex-wrap: wrap;
-    gap: 4px;
-
-    &__link {
-        color: var(--text-color);
-
-        &:hover {
-            color: var(--primary-color);
-        }
-    }
-}
-
-.countries {
-    align-items: end;
-    flex-wrap: wrap;
-    gap: 4px;
 }

@@ -25,6 +25,9 @@
 </head>
 
 <body>
+
+    @@include('components/_request-dialog.html')
+
     <!-- Header -->
     @@include('layout/_header.html')
     <!-- End Header -->
@@ -38,57 +41,427 @@
                     <h1 class="offer__title h1">ПРИЕМКА КВАРТИРЫ В НОВОСТРОЙКЕ</h1>
                     <p class="offer__text text-info">Закажите приемку квартиры и устраните дефекты за счет застройщика
                     </p>
-                    <input type="range"  min="20" max="100">
-                    <button class="offer__btn btn reset-btn" type="button">Узнать стоимость</button>
+                    <div class="offer__form">
+                        <input class="offer__input form__input" type="text" placeholder="Площадь квартиры">
+                        <button class="offer__btn btn reset-btn" type="button">Узнать стоимость</button>
+                    </div>
                     <div class="offer__img">
-                        <picture>
-                            <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
-                            <source srcset="./assets/images/offer.webp" type="image/webp"> -->
-                            <img src="/assets/images/manpreview.png" alt="Изображение мужчины">
-                        </picture>
+                        <img src="/assets/images/offer/man-main.svg" alt="Изображение мужчины">
                     </div>
                 </div>
             </div>
-            <ul class="offer__img-contacts reset-list">
+            <ul class="offer__contacts contacts reset-list">
                 <li>
-                    <a class="reset-link" href="#">
-                        <picture>
-                            <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
-                            <source srcset="./assets/images/offer.webp" type="image/webp"> -->
-                            <img src="/assets/images/phone.png" alt="Изображение телефона">
-                        </picture>
+                    <a class="contacts__link reset-link" href="#">
+                        <svg viewBox="0 0 42 42" fill="#21A0AA" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.5" y="0.5" width="41" height="41" rx="20.5" />
+                            <rect x="0.5" y="0.5" width="41" height="41" rx="20.5" stroke="#EFF1F4" />
+                            <path
+                                d="M23.2955 28.8359C24.1005 29.3553 25.0598 29.5816 26.0121 29.4769C26.9644 29.3721 27.8516 28.9427 28.5245 28.2607L29.1128 27.6855C29.3707 27.4217 29.5151 27.0675 29.5151 26.6986C29.5151 26.3296 29.3707 25.9754 29.1128 25.7116L26.6159 23.2408C26.3543 22.9838 26.0022 22.8397 25.6355 22.8397C25.2687 22.8397 24.9166 22.9838 24.655 23.2408C24.3912 23.4987 24.037 23.6431 23.668 23.6431C23.2991 23.6431 22.9448 23.4987 22.681 23.2408L18.7592 19.319C18.6284 19.1901 18.5245 19.0365 18.4536 18.867C18.3827 18.6976 18.3462 18.5157 18.3462 18.3321C18.3462 18.1484 18.3827 17.9665 18.4536 17.7971C18.5245 17.6276 18.6284 17.474 18.7592 17.3451C19.0163 17.0835 19.1604 16.7314 19.1604 16.3646C19.1604 15.9978 19.0163 15.6458 18.7592 15.3842L16.2754 12.9004C16.0116 12.6425 15.6574 12.498 15.2884 12.498C14.9195 12.498 14.5653 12.6425 14.3015 12.9004L13.7263 13.4886C13.0443 14.1615 12.6149 15.0487 12.5101 16.001C12.4054 16.9533 12.6317 17.9126 13.1511 18.7177C15.8572 22.7058 19.3004 26.1401 23.2955 28.8359Z"
+                                fill="white" />
+                        </svg>
                     </a>
                 </li>
                 <li>
-                    <a class="reset-link" href="#">
-                        <picture>
-                            <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
-                                <source srcset="./assets/images/offer.webp" type="image/webp"> -->
-                            <img src="/assets/images/tg.png" alt="Изображение телеграма">
-                        </picture>
+                    <a class="contacts__link reset-link" href="#">
+                        <svg viewBox="0 0 42 42" fill="#60B1E2" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="42" height="42" rx="21" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M27.1737 13.984C27.3903 13.8953 27.6268 13.8653 27.8589 13.8971C28.0911 13.9289 28.3105 14.0213 28.4948 14.165C28.679 14.3086 28.8215 14.4983 28.9076 14.7145C28.9937 14.9308 29.0203 15.1659 28.9846 15.3957C28.4711 18.709 27.5297 24.7806 27.03 28.0034C26.9954 28.2264 26.9034 28.4368 26.7629 28.6143C26.6224 28.7917 26.4382 28.9302 26.228 29.0163C26.0178 29.1024 25.7888 29.1332 25.563 29.1058C25.3373 29.0784 25.1225 28.9937 24.9394 28.8599C23.1716 27.5676 20.5212 25.63 19.1755 24.6459C19.0716 24.57 18.9859 24.4724 18.9242 24.3599C18.8626 24.2475 18.8265 24.123 18.8187 23.9952C18.8108 23.8675 18.8314 23.7396 18.8788 23.6206C18.9262 23.5015 18.9994 23.3943 19.0932 23.3064C20.3262 22.1509 22.7821 19.8496 24.4718 18.2662C24.5116 18.2286 24.5358 18.1777 24.5398 18.1234C24.5437 18.069 24.527 18.0152 24.4931 17.9724C24.4591 17.9296 24.4102 17.901 24.356 17.8921C24.3019 17.8832 24.2463 17.8947 24.2002 17.9243C22.0337 19.3263 18.7156 21.4733 17.0894 22.5256C16.7847 22.7228 16.4421 22.8555 16.0833 22.9153C15.7245 22.9751 15.3571 22.9608 15.0041 22.8732C14.1086 22.6511 12.817 22.3306 11.6676 22.0456C11.4877 22.001 11.3265 21.9011 11.207 21.7603C11.0876 21.6195 11.016 21.4449 11.0024 21.2614C10.9888 21.0778 11.0339 20.8947 11.1313 20.7381C11.2287 20.5815 11.3735 20.4593 11.5449 20.3891C15.5462 18.7493 23.3767 15.5404 27.1737 13.984Z"
+                                fill="white" />
+                        </svg>
                     </a>
                 </li>
                 <li>
-                    <a class="reset-link" href="#">
-                        <picture>
-                            <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
-                                <source srcset="./assets/images/offer.webp" type="image/webp"> -->
-                            <img src="/assets/images/WhatsApp.png" alt="Изображение вотсапа">
-                        </picture>
+                    <a class="contacts__link reset-link" href="#">
+                        <svg viewBox="0 0 42 42" fill="#45983E" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 42C32.598 42 42 32.598 42 21C42 9.40202 32.598 0 21 0C9.40202 0 0 9.40202 0 21C0 32.598 9.40202 42 21 42Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M21.6918 32.6836H21.6866C19.5967 32.6829 17.5432 32.1586 15.7193 31.1637L9.09961 32.9002L10.8711 26.4294C9.77838 24.5357 9.20337 22.3875 9.2043 20.1867C9.20704 13.3017 14.8088 7.7002 21.6917 7.7002C25.0322 7.70164 28.1674 9.00208 30.525 11.3624C32.8826 13.7227 34.1803 16.86 34.179 20.1965C34.1762 27.0799 28.5767 32.6808 21.6918 32.6836ZM16.0261 28.9031L16.4051 29.128C17.9986 30.0737 19.8253 30.574 21.6877 30.5747H21.6919C27.4124 30.5747 32.0684 25.9187 32.0707 20.1958C32.0718 17.4225 30.9932 14.8149 29.0337 12.8531C27.0741 10.8912 24.4682 9.81028 21.696 9.80932C15.971 9.80932 11.315 14.4649 11.3127 20.1874C11.3119 22.1485 11.8607 24.0584 12.8996 25.7109L13.1464 26.1036L12.0979 29.9335L16.0261 28.9031ZM27.5556 22.885C27.7732 22.9902 27.9202 23.0612 27.9829 23.1659C28.0609 23.296 28.0609 23.9207 27.801 24.6497C27.5409 25.3785 26.2944 26.0437 25.6949 26.1332C25.1574 26.2136 24.4771 26.2471 23.7297 26.0096C23.2765 25.8658 22.6954 25.6738 21.9509 25.3523C19.0259 24.0893 17.0491 21.2543 16.6755 20.7185C16.6494 20.6809 16.631 20.6547 16.6208 20.641L16.6183 20.6377C16.4532 20.4174 15.3468 18.9412 15.3468 17.4134C15.3468 15.9762 16.0528 15.2228 16.3778 14.8761C16.4 14.8523 16.4205 14.8305 16.4388 14.8104C16.7248 14.4981 17.0629 14.42 17.2709 14.42C17.4788 14.42 17.6871 14.4219 17.8689 14.431C17.8913 14.4322 17.9146 14.432 17.9388 14.4319C18.1206 14.4308 18.3473 14.4295 18.5709 14.9666C18.6569 15.1734 18.7828 15.4798 18.9156 15.8031C19.1841 16.4567 19.4807 17.1789 19.5329 17.2834C19.6109 17.4396 19.6629 17.6217 19.5589 17.83C19.5433 17.8613 19.5288 17.8907 19.515 17.9189C19.4369 18.0784 19.3795 18.1957 19.2469 18.3505C19.1948 18.4114 19.1409 18.477 19.087 18.5426C18.9796 18.6733 18.8723 18.804 18.7789 18.8971C18.6227 19.0527 18.46 19.2215 18.6421 19.5339C18.8241 19.8463 19.4503 20.868 20.3778 21.6954C21.3749 22.5847 22.2415 22.9606 22.6808 23.1512C22.7665 23.1884 22.836 23.2185 22.887 23.244C23.1989 23.4002 23.3809 23.3741 23.5629 23.1659C23.7449 22.9577 24.3429 22.2548 24.5509 21.9425C24.7588 21.6302 24.9669 21.6823 25.2529 21.7863C25.5389 21.8906 27.0729 22.6453 27.3849 22.8015C27.4459 22.832 27.5028 22.8595 27.5556 22.885Z"
+                                fill="#FDFDFD" />
+                        </svg>
                     </a>
                 </li>
                 <li>
-                    <a class="reset-link" href="#">
-                        <picture>
-                            <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
-                                <source srcset="./assets/images/offer.webp" type="image/webp"> -->
-                            <img src="/assets/images/message.png" alt="Изображение сообщения">
-                        </picture>
+                    <a class="contacts__link reset-link" href="#">
+                        <svg viewBox="0 0 42 42" fill="#8A99B5" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="42" height="42" rx="21" />
+                            <path
+                                d="M20.9973 12C19.3693 12.0005 17.772 12.4426 16.3754 13.2791C14.9788 14.1157 13.8352 15.3154 13.0666 16.7504C12.2979 18.1855 11.9328 19.8022 12.0103 21.4283C12.0878 23.0545 12.6049 24.6291 13.5065 25.9846L11.9973 30L17.0512 29.0862C18.2681 29.6808 19.6036 29.9932 20.9581 29.9999C22.3125 30.0066 23.651 29.7075 24.8738 29.1249C26.0966 28.5423 27.1721 27.6912 28.0202 26.6351C28.8682 25.579 29.467 24.345 29.7718 23.0253C30.0766 21.7056 30.0796 20.334 29.7805 19.013C29.4815 17.6919 28.8881 16.4554 28.0447 15.3956C27.2012 14.3358 26.1294 13.48 24.9092 12.8921C23.689 12.3041 22.3518 11.9992 20.9973 12Z"
+                                fill="white" />
+                            <path
+                                d="M16.1513 21.6922C16.5336 21.6922 16.8436 21.3823 16.8436 20.9999C16.8436 20.6176 16.5336 20.3076 16.1513 20.3076C15.7689 20.3076 15.459 20.6176 15.459 20.9999C15.459 21.3823 15.7689 21.6922 16.1513 21.6922Z"
+                                stroke="#8A99B5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M20.6513 21.6922C21.0336 21.6922 21.3436 21.3823 21.3436 20.9999C21.3436 20.6176 21.0336 20.3076 20.6513 20.3076C20.2689 20.3076 19.959 20.6176 19.959 20.9999C19.959 21.3823 20.2689 21.6922 20.6513 21.6922Z"
+                                stroke="#8A99B5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M25.1513 21.6922C25.5336 21.6922 25.8436 21.3823 25.8436 20.9999C25.8436 20.6176 25.5336 20.3076 25.1513 20.3076C24.7689 20.3076 24.459 20.6176 24.459 20.9999C24.459 21.3823 24.7689 21.6922 25.1513 21.6922Z"
+                                stroke="#8A99B5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
                     </a>
                 </li>
             </ul>
         </section>
         <!-- End Offer -->
+
+        <!-- Suggestion -->
+        <section class="suggestion">
+            <div class="container">
+                <div class="suggestion__group">
+                    <h2 class="suggestion__title h2">Вас пригласили на осмотр квартиры в новостройке?</h2>
+                    <p class="suggestion__text text">Вызовите квалифицированного специалиста по приемке со всем
+                        необходимым оборудованием, чтобы потом
+                        не заниматься устранением недоделок за свой счет</p>
+                </div>
+                <div class="suggestion__cards">
+                    <article class="suggestion-card">
+                        <div class="suggestion-card__line"></div>
+                        <p class="suggestion-card__title h3">97% квартир сдается с дефектами</p>
+                        <p class="suggestion-card__text text">Без опыта в строительстве и специальных инструментов вы
+                            сможете
+                            заметить только крупные
+                            косметические дефекты.</p>
+                        <div class="suggestion-card__img">
+                            <picture>
+                                <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
+                                    <source srcset="./assets/images/offer.webp" type="image/webp"> -->
+                                <img src="/assets/images/suggestion/man1.svg" alt="Изображение мужчины">
+                            </picture>
+                        </div>
+                    </article>
+                    <article class="suggestion-card">
+                        <div class="suggestion-card__line"></div>
+                        <p class="suggestion-card__title h3">Не устраняйте недоделки за свой счет</p>
+                        <p class="suggestion-card__text text">Если акт приема-передачи уже подписан, поправить
+                            несовершенства
+                            за
+                            счет застройщика будет
+                            невозможно.</p>
+                        <div class="suggestion-card__img">
+                            <picture>
+                                <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
+                                    <source srcset="./assets/images/offer.webp" type="image/webp"> -->
+                                <img src="/assets/images/suggestion/man2.svg" alt="Изображение мужчины">
+                            </picture>
+                        </div>
+                    </article>
+                    <article class="suggestion-card">
+                        <div class="suggestion-card__line"></div>
+                        <p class="suggestion-card__title h3">Сэкономте на ремонте от 300 000 ₽</p>
+                        <p class="suggestion-card__text text">Своевременное обнаружение дефектов избавит от лишних трат
+                            и
+                            необходи-мости судиться с
+                            застройщиком.</p>
+                        <div class="suggestion-card__img">
+                            <picture>
+                                <!-- <source srcset="./assets/images/offer.avif" type="image/avif">
+                                <source srcset="./assets/images/offer.webp" type="image/webp"> -->
+                                <img src="/assets/images/suggestion/man3.svg" alt="Изображение мужчины">
+                            </picture>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- End Suggestion -->
+
+        <!-- Violations -->
+        <section class="violations">
+            <div class="container">
+                <h2 class="violations__title h2">Часто встречающиеся нарушения</h2>
+                <ul class="violations__objects reset-list">
+                    <li><button class="btn-violation reset-btn" type="button">Двери и окна</button></li>
+                    <li><button class="btn-violation reset-btn" type="button">Пол и стены</button></li>
+                    <li><button class="btn-violation reset-btn" type="button">Канализация и вода</button></li>
+                    <li><button class="btn-violation reset-btn" type="button">Вентиляция</button></li>
+                    <li><button class="btn-violation reset-btn" type="button">Вентиляция</button></li>
+                </ul>
+                <div class="violations__group">
+                    <ul class="violations__faults faults reset-list">
+                        <li><img class="faults__icon" src="./assets/images/violations/iconX.svg" alt="Пункт 1">
+                            Отклонение по вертикали стены</li>
+                        <li><img class="faults__icon" src="./assets/images/violations/iconX.svg" alt="Пункт 2"> Не
+                            заделаны штробы</li>
+                        <li><img class="faults__icon" src="./assets/images/violations/iconX.svg" alt="Пункт 3"> Разнотон
+                            обоев</li>
+                        <li><img class="faults__icon" src="./assets/images/violations/iconX.svg" alt="Пункт 4"> Перепад
+                            уровня пола</li>
+                        <li><img class="faults__icon" src="./assets/images/violations/iconX.svg" alt="Пункт 5"> Трещины
+                            по штукатурке</li>
+                        <li><img class="faults__icon" src="./assets/images/violations/iconX.svg" alt="Пункт 6"> Плесень
+                            в местах стыков </li>
+                    </ul>
+                    <div class="violations__shadow"></div>
+                    <div class="violations__infos infos reset-list">
+                        <p class="infos__title h3">В среднем за приемку выявляется<br>
+                            <span class="infos__title-sub">около 50 нарушений</span>
+                        </p>
+                        <p class="infos__text text">70% нарушений обнаружены благодаря сертифицированным и дорогостоящям
+                            приборам, а также знаниям нормативов</p>
+                        <div class="infos__line"></div>
+                        <ul class="infos__btns reset-list">
+                            <li><button class="infos__btn reset-btn">
+                                    <span class="infos__btn-icon">
+                                        <svg viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.5" y="1.21582" width="39" height="39" rx="19.5"
+                                                stroke="#20304A" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M16.7857 13.2158C17.0816 13.2158 17.3214 13.4557 17.3214 13.7515V14.823H19.4643V13.7515C19.4643 13.4557 19.7041 13.2158 20 13.2158C20.2959 13.2158 20.5357 13.4557 20.5357 13.7515V14.823H22.6786V13.7515C22.6786 13.4557 22.9184 13.2158 23.2143 13.2158C23.5102 13.2158 23.75 13.4557 23.75 13.7515V14.823H25.8929C26.7805 14.823 27.5 15.5425 27.5 16.4301V26.6087C27.5 27.4963 26.7805 28.2158 25.8929 28.2158H14.1071C13.2195 28.2158 12.5 27.4963 12.5 26.6087V16.4301C12.5 15.5425 13.2195 14.823 14.1071 14.823H16.25V13.7515C16.25 13.4557 16.4898 13.2158 16.7857 13.2158ZM16.25 15.8944H14.1071C13.8113 15.8944 13.5714 16.1342 13.5714 16.4301V26.6087C13.5714 26.9045 13.8113 27.1444 14.1071 27.1444H25.8929C26.1887 27.1444 26.4286 26.9045 26.4286 26.6087V16.4301C26.4286 16.1342 26.1887 15.8944 25.8929 15.8944H23.75V16.9658C23.75 17.2617 23.5102 17.5015 23.2143 17.5015C22.9184 17.5015 22.6786 17.2617 22.6786 16.9658V15.8944H20.5357V16.9658C20.5357 17.2617 20.2959 17.5015 20 17.5015C19.7041 17.5015 19.4643 17.2617 19.4643 16.9658V15.8944H17.3214V16.9658C17.3214 17.2617 17.0816 17.5015 16.7857 17.5015C16.4898 17.5015 16.25 17.2617 16.25 16.9658V15.8944ZM15.7143 20.7158C15.7143 20.42 15.9541 20.1801 16.25 20.1801H23.75C24.0459 20.1801 24.2857 20.42 24.2857 20.7158C24.2857 21.0117 24.0459 21.2515 23.75 21.2515H16.25C15.9541 21.2515 15.7143 21.0117 15.7143 20.7158ZM15.7143 23.9301C15.7143 23.6342 15.9541 23.3944 16.25 23.3944H20.5357C20.8316 23.3944 21.0714 23.6342 21.0714 23.9301C21.0714 24.226 20.8316 24.4658 20.5357 24.4658H16.25C15.9541 24.4658 15.7143 24.226 15.7143 23.9301Z"
+                                                fill="#20304A" />
+                                        </svg>
+                                    </span>Скачать чек-лист</button>
+                            </li>
+                            <li><button class="infos__btn reset-btn">
+                                    <span class="infos__btn-icon">
+                                        <svg viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.5" y="1.21582" width="39" height="39" rx="19.5"
+                                                stroke="#20304A" />
+                                            <path
+                                                d="M16.5384 18.4081H21.1538M16.5384 21.2927H21.1538M16.5384 24.1774H18.8461M17.1153 13.2158H24.6153C24.9213 13.2158 25.2148 13.3374 25.4312 13.5538C25.6476 13.7702 25.7692 14.0636 25.7692 14.3697V25.3312M15.3846 15.5235H22.3076C22.9449 15.5235 23.4615 16.0401 23.4615 16.6774V27.062C23.4615 27.6992 22.9449 28.2158 22.3076 28.2158H15.3846C14.7473 28.2158 14.2307 27.6992 14.2307 27.062V16.6774C14.2307 16.0401 14.7473 15.5235 15.3846 15.5235Z"
+                                                stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>Пример дефектной ведомости</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Violations -->
+
+        <!-- Application -->
+        <section class="application">
+            <div class="container">
+                <div class="application__group">
+                    <h2 class="application__title h2">Отправьте заявку </h2>
+                    <h2 class="application__title h2">и получите <span class="application__title-add">в подарок</span>:
+                    </h2>
+                    <p class="application__text text">Расчет площади квартиры, рекомендации по ремонту, дизайну и
+                        строительной бригаде</p>
+                    <div class="application__accept">
+                        <label class="application__label" for="application-phone">Телефон</label>
+                        <input class="application__input form__input" type="tel" name="phone" id="application-phone"
+                            maxlength="12" placeholder="+9 (___) ___ - __ - __">
+                        <button class="application__btn btn reset-btn" type="button" data-a11y-dialog-show="dialog-request">Отправить</button>
+                    </div>
+                    <p class="application__text-add text-addiction">Нажимая на кнопку, вы принимаете Положение и
+                        Согласие на обработку персональных данных</p>
+                    <div class="application__img">
+                        <picture>
+                            <img src="/assets/images/application/man-application.svg" alt="Изображение мужчины">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Application -->
+
+        <!-- Receiving -->
+        <section class="receiving">
+            <div class="container">
+                <h2 class="receiving__title h2">Приемка в квартирах</h2>
+                <ul class="receiving__cards reset-list">
+                    <li>
+                        <article class="receiving-card">
+                            <picture class="receiving-card__img">
+                                <img class="receiving-card__img" src="/assets/images/receiving/flat1.png"
+                                    alt="Изображение квартипы без отделки">
+                            </picture>
+                            <div class="receiving-card__description">
+                                <p class="receiving-card__title">Без отделки</p>
+                                <p class="receiving-card__text text">Исправность розеток, канализация и водопровод,
+                                    изгибы
+                                    полов и потолков, <a href="#" class="receiving-card__link reset-link">еще 5</a>
+                                </p>
+                            </div>
+                            <div class="receiving-card__prices">
+                                <p class="receiving-card__price h3">70₽/м2</p>
+                                <p class="receiving-card__accept">от 3 000 ₽</p>
+                            </div>
+                            <div class="receiving-card__line"></div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="receiving-card">
+                            <picture class="receiving-card__img">
+                                <img class="receiving-card__img" src="/assets/images/receiving/flat2.png"
+                                    alt="Изображение квартипы с отделкой">
+                            </picture>
+                            <div class="receiving-card__description">
+                                <p class="receiving-card__title">С отделкой</p>
+                                <p class="receiving-card__text text">Исправность розеток, канализация и водопровод,
+                                    изгибы
+                                    полов и потолков, <a href="#" class="receiving-card__link reset-link">еще 5</a>
+                                </p>
+                            </div>
+                            <div class="receiving-card__prices">
+                                <p class="receiving-card__price h3">100₽/м2</p>
+                                <p class="receiving-card__accept">от 4 000 ₽</p>
+                            </div>
+                            <div class="receiving-card__line"></div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="receiving-card">
+                            <picture class="receiving-card__img">
+                                <img class="receiving-card__img" src="/assets/images/receiving/flat3.png"
+                                    alt="Изображение квартипы с предчистовой отделкой">
+                            </picture>
+                            <div class="receiving-card__description">
+                                <p class="receiving-card__title">С предчистовой отделки</p>
+                                <p class="receiving-card__text text">Исправность розеток, канализация и водопровод,
+                                    изгибы
+                                    полов и потолков, <a href="#" class="receiving-card__link reset-link">еще 5</a>
+                                </p>
+                            </div>
+                            <div class="receiving-card__prices">
+                                <p class="receiving-card__price h3">120₽/м2</p>
+                                <p class="receiving-card__accept">от 4 000 ₽</p>
+                            </div>
+                            <div class="receiving-card__line"></div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+            <button class="receiving__btn btn-receive reset-btn" type="button">Смотреть все услуги</button>
+        </section>
+        <!-- End Receiving -->
+
+        <!-- Reviews -->
+        <section class="reviews">
+            <div class="container">
+                <h2 class="reviews__title h2">Отзывы</h2>
+                <div class="reviews__slider slider slider-swiper">
+                    <div class="slider__nav ">
+                        <button class="slider__prev reset-btn swiper-button-prev" type="button">
+                            <svg viewBox="0 0 40 41" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="-0.5" y="0.5" width="39" height="39" rx="19.5"
+                                    transform="matrix(-1 0 0 1 39 0.71582)" stroke="black" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M20.3882 13.7563C20.1344 13.5025 19.7228 13.5025 19.469 13.7563L12.969 20.2563C12.7151 20.5101 12.7151 20.9217 12.969 21.1755L19.469 27.6755C19.7228 27.9294 20.1344 27.9294 20.3882 27.6755C20.642 27.4217 20.642 27.0101 20.3882 26.7563L14.9978 21.3659H26.5714C26.9304 21.3659 27.2214 21.0749 27.2214 20.7159C27.2214 20.3569 26.9304 20.0659 26.5714 20.0659H14.9978L20.3882 14.6755C20.642 14.4217 20.642 14.0101 20.3882 13.7563Z"
+                                    fill="black" />
+                            </svg>
+                        </button>
+                        <button class="slider__next reset-btn swiper-button-next" type="button">
+                            <svg viewBox="0 0 40 41" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="1.21582" width="39" height="39" rx="19.5" stroke="black" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.6118 13.7563C19.8656 13.5025 20.2772 13.5025 20.531 13.7563L27.031 20.2563C27.2849 20.5101 27.2849 20.9217 27.031 21.1755L20.531 27.6755C20.2772 27.9294 19.8656 27.9294 19.6118 27.6755C19.358 27.4217 19.358 27.0101 19.6118 26.7563L25.0022 21.3659H13.4286C13.0696 21.3659 12.7786 21.0749 12.7786 20.7159C12.7786 20.3569 13.0696 20.0659 13.4286 20.0659H25.0022L19.6118 14.6755C19.358 14.4217 19.358 14.0101 19.6118 13.7563Z"
+                                    fill="black" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="slider__wrapper swiper-wrapper">
+                        <article class="slider__slide reviews-card swiper-slide">
+                            <div class="reviews-card__img">
+                                <picture>
+                                    <!-- <source srcset="/assets/images/catalog/1.avif" type="image/avif">
+                                    <source srcset="/assets/images/catalog/1.webp" type="image/webp"> -->
+                                    <img src="/assets/images/reviews/reviews-human1.png"
+                                        alt="Изображения человека, написавшего отзыв">
+                                </picture>
+                            </div>
+                            <h2 class="reviews-card__title h2">Алексей</h2>
+                            <p class="reviews-card__text-add text">Жилищный комплекс</p>
+                            <p class="reviews-card__text text-info">Изумрудные холмы</p>
+                            <p class="reviews-card__text-add text">Квартира</p>
+                            <p class="reviews-card__text text-info">54,4 м²</p>
+                            <div class="reviews-card__play"><img src="/assets/images/reviews/play.svg" alt="Кнопка проигрывания"></div>
+                            <div class="reviews-card__line"></div>
+                        </article>
+                        <article class="slider__slide reviews-card swiper-slide">
+                            <div class="reviews-card__img">
+                                <picture>
+                                    <!-- <source srcset="/assets/images/catalog/1.avif" type="image/avif">
+                                    <source srcset="/assets/images/catalog/1.webp" type="image/webp"> -->
+                                    <img src="/assets/images/reviews/reviews-human2.png"
+                                        alt="Изображения человека, написавшего отзыв">
+                                </picture>
+                            </div>
+                            <h2 class="reviews-card__title h2">Владимир</h2>
+                            <p class="reviews-card__text-add text">Жилищный комплекс</p>
+                            <p class="reviews-card__text text-info">Ильинские луга</p>
+                            <p class="reviews-card__text-add text">Квартира</p>
+                            <p class="reviews-card__text text-info">72 м²</p>
+                            <div class="reviews-card__play"><img src="/assets/images/reviews/play.svg" alt="Кнопка проигрывания"></div>
+                            <div class="reviews-card__line"></div>
+                        </article>
+                        <article class="slider__slide reviews-card swiper-slide">
+                            <div class="reviews-card__img">
+                                <picture>
+                                    <!-- <source srcset="/assets/images/catalog/1.avif" type="image/avif">
+                                    <source srcset="/assets/images/catalog/1.webp" type="image/webp"> -->
+                                    <img src="/assets/images/reviews/reviews-human3.png"
+                                        alt="Изображения человека, написавшего отзыв">
+                                </picture>
+                            </div>
+                            <h2 class="reviews-card__title h2">Анна</h2>
+                            <p class="reviews-card__text-add text">Жилищный комплекс</p>
+                            <p class="reviews-card__text text-info">Саларьево парк</p>
+                            <p class="reviews-card__text-add text">Квартира</p>
+                            <p class="reviews-card__text text-info">33,4 м²</p>
+                            <div class="reviews-card__play"><img src="/assets/images/reviews/play.svg" alt="Кнопка проигрывания"></div>
+                            <div class="reviews-card__line"></div>
+                        </article>
+                        <article class="slider__slide reviews-card swiper-slide">
+                            <div class="reviews-card__img">
+                                <picture>
+                                    <!-- <source srcset="/assets/images/catalog/1.avif" type="image/avif">
+                                    <source srcset="/assets/images/catalog/1.webp" type="image/webp"> -->
+                                    <img src="/assets/images/reviews/reviews-human1.png"
+                                        alt="Изображения человека, написавшего отзыв">
+                                </picture>
+                            </div>
+                            <h2 class="reviews-card__title h2">Алексей</h2>
+                            <p class="reviews-card__text-add text">Жилищный комплекс</p>
+                            <p class="reviews-card__text text-info">Изумрудные холмы</p>
+                            <p class="reviews-card__text-add text">Квартира</p>
+                            <p class="reviews-card__text text-info">54,4 м²</p>
+                            <div class="reviews-card__play"><img src="/assets/images/reviews/play.svg" alt="Кнопка проигрывания"></div>
+                            <div class="reviews-card__line"></div>
+                        </article>
+                        <article class="slider__slide reviews-card swiper-slide">
+                            <div class="reviews-card__img">
+                                <picture>
+                                    <!-- <source srcset="/assets/images/catalog/1.avif" type="image/avif">
+                                    <source srcset="/assets/images/catalog/1.webp" type="image/webp"> -->
+                                    <img src="/assets/images/reviews/reviews-human2.png"
+                                        alt="Изображения человека, написавшего отзыв">
+                                </picture>
+                            </div>
+                            <h2 class="reviews-card__title h2">Владимир</h2>
+                            <p class="reviews-card__text-add text">Жилищный комплекс</p>
+                            <p class="reviews-card__text text-info">Ильинские луга</p>
+                            <p class="reviews-card__text-add text">Квартира</p>
+                            <p class="reviews-card__text text-info">72 м²</p>
+                            <div class="reviews-card__play"><img src="/assets/images/reviews/play.svg" alt="Кнопка проигрывания"></div>
+                            <div class="reviews-card__line"></div>
+                        </article>
+                        <article class="slider__slide reviews-card swiper-slide">
+                            <div class="reviews-card__img">
+                                <picture>
+                                    <!-- <source srcset="/assets/images/catalog/1.avif" type="image/avif">
+                                    <source srcset="/assets/images/catalog/1.webp" type="image/webp"> -->
+                                    <img src="/assets/images/reviews/reviews-human3.png"
+                                        alt="Изображения человека, написавшего отзыв">
+                                </picture>
+                            </div>
+                            <h2 class="reviews-card__title h2">Анна</h2>
+                            <p class="reviews-card__text-add text">Жилищный комплекс</p>
+                            <p class="reviews-card__text text-info">Саларьево парк</p>
+                            <p class="reviews-card__text-add text">Квартира</p>
+                            <p class="reviews-card__text text-info">33,4 м²</p>
+                            <div class="reviews-card__play"><img src="/assets/images/reviews/play.svg" alt="Кнопка проигрывания"></div>
+                            <div class="reviews-card__line"></div>
+                        </article>
+                    </div>
+                </div>
+                <button class="reviews__btn btn-receive reset-btn" type="button">Смотреть все отзывы</button>
+            </div>
+        </section>
+        <!-- End Reviews -->
 
     </main>
     <!-- End Main -->

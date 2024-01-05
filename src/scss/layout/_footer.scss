@@ -8,17 +8,18 @@
     border-top-left-radius: 50px;
 
     &__big-footer {
+        display: flex;
+        align-self: stretch;
+        align-items: flex-start;
         flex-wrap: wrap;
         padding: 60px 100px;
 
         &__info {
             display: flex;
-            width: 413px;
         }
 
         &__clients-company {
             display: flex;
-            width: 413px;
         }
     }
 
@@ -31,17 +32,26 @@
 
 .info {
     flex-direction: column;
-    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 413px;
 
     &__link {
+        margin-bottom: 15px;
         color: #499DDF;
+    }
+
+    &__contacts{
+        width: 42px;
+        height: 42px;
     }
 }
 
 .clients-company {
     flex-direction: column;
-    margin-bottom: 12px;
+    margin-top: 12px;
+    width: 413px;
     &__link{
+        margin-top: 12px;
         color: var(--text-color);
     }
 }

@@ -1,0 +1,37 @@
+<!-- 1. The dialog container -->
+<div class="request-dialog dialog" id="your-dialog-id" aria-labelledby="your-dialog-title" aria-hidden="true">
+    <!-- 2. The dialog overlay -->
+    <div class="dialog__overlay" data-a11y-dialog-hide></div>
+    <!-- 3. The actual dialog -->
+    <div class="dialog__body" role="document">
+        <!-- 4. The close button -->
+        <button class="dialog__close reset-btn" type="button" data-a11y-dialog-hide aria-label="Close dialog">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 17" fill="none">
+                <path d="M15.5 1L0.5 16M0.5 1L15.5 16" stroke="#242628" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+        <!-- 5. The dialog title -->
+        <h2 class="dialog__title h2" id="your-dialog-title">Заказать обратный звонок</h2>
+        <!-- 6. Dialog content -->
+        <form class="request-dialog__form form">
+            <div class="form__group">
+                <label class="form__label text-info" for="request-dialog-name">Имя</label>
+                <input class="form__input" type="text" id="request-dialog-name" name="name"
+                    placeholder="Иван" data-empty-message="Поле обязательно для заполнения">
+                <span class="form__error"></span>
+            </div>
+            <div class="form__group">
+                <label class="form__label text-info" for="request-dialog-phone">Телефон</label>
+                <input class="form__input" type="tel" id="request-dialog-phone" name="phone"
+                    placeholder="+7 (___) ___-__-__">
+                <span class="form__error"></span>
+            </div>
+            <div class="form__group">
+                <button class="form__submit btn reset-btn" type="submit">Отправить</button>
+                <p class="form__text text-addiction">Нажимая на кнопку, вы принимаете Положение и Согласие 
+                    на обработку персональных данных</p>
+            </div>
+        </form>
+    </div>
+</div>
