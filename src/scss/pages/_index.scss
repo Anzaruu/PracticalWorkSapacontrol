@@ -918,11 +918,20 @@
         justify-content: space-between;
         border-radius: 20px;
     
-        &__text {
+        &__texs {
+            display: flex;
             padding: 30px 20px;
             background-color: var(--bg-color-white);
             border-radius: 20px 0px 0px 20px;
             transition: all 0.2s ease-in-out;
+        }
+
+        &__text{
+            transition: all 0.2s ease-in-out;
+        }
+
+        &__answ{
+            display: none;
         }
     
         &__arrow {
@@ -964,6 +973,11 @@
     
         &:hover .questions-card__text {
             color: var(--primary-color);
+        }
+        
+        &:hover .questions-card__answ {
+            margin-top: 10px;
+            display: block;
         }
     
         &:hover .questions-card__arrow {
@@ -3043,11 +3057,19 @@
         justify-content: space-between;
         border-radius: 20px;
     
-        &__text {
+        &__texts {
             padding: 30px 40px;
             background-color: var(--bg-color-white);
             border-radius: 20px 0px 0px 20px;
             transition: all 0.2s ease-in-out;
+        }
+
+        &__text{
+            transition: all 0.2s ease-in-out;
+        }
+
+        &__answ{
+            display: none;
         }
     
         &__arrow {
@@ -3089,6 +3111,11 @@
     
         &:hover .questions-card__text {
             color: var(--primary-color);
+        }
+
+        &:hover .questions-card__answ {
+            margin-top: 20px;
+            display: block;
         }
     
         &:hover .questions-card__arrow {
