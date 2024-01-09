@@ -18,25 +18,29 @@
         color: var(--text-color);
         transition: all 0.2s ease-in-out;
 
-        &:hover{
+        &:hover {
             color: var(--primary-color);
         }
-        
-        &:hover .menu__link-arrow{
-           fill: var(--primary-color);
-           transform: rotate(180deg);
+
+        &:hover .menu__link-arrow {
+            fill: var(--primary-color);
+            transform: rotate(180deg);
         }
     }
 
-    &__link-arrow{
+    &__link-arrow {
         width: 10px;
         height: 6px;
         transition: all 0.2s ease-in-out;
     }
+
+    &__burger {
+        display: none;
+    }
 }
 
-.submenu {
-    display: none;
+/*.submenu {
+    display: flex;
     position: relative;
     top: 100%;
     left: 0;
@@ -49,5 +53,90 @@
         &:hover{
             color: var(--primary-color);
         }
+    }
+}*/
+
+
+@media screen and (min-width: 300px) and (max-width: 700px){.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &__logo {
+        width: 151px;
+    }
+    
+    &__burger {
+        display: block;
+    }
+}
+
+.menu {
+    display: none;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    &__link {
+        color: var(--text-color);
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: var(--primary-color);
+        }
+
+        &:hover .menu__link-arrow {
+            fill: var(--primary-color);
+            transform: rotate(180deg);
+        }
+    }
+
+    &__link-arrow {
+        width: 10px;
+        height: 6px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__burger {
+        display: block;
+    }
+}
+}
+@media screen and (min-width: 700px) and (max-width: 1200px){}
+@media screen and (min-width: 1200px) and (max-width: 1700px){}
+@media (max-width: $tablet-bp) {
+    .nav {
+        &__menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            flex-direction: column;
+            width: 375px;
+            padding: 40px 0 150px 0;
+            background-color: var(--bg-color);
+            box-shadow: 3px 3px 10px rgb(0 0 0 / 0.1);
+            transition: opacity 0.2s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+
+            .menu__link {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .menu {
+        &_active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    .toggle-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 34px;
+        height: 34px;
     }
 }
