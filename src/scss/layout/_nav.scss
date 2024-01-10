@@ -11,7 +11,7 @@
         &__burger {
             display: block;
         }
-        
+
         &__menu {
             position: absolute;
             top: 100%;
@@ -25,8 +25,25 @@
             opacity: 0;
             pointer-events: none;
 
+
             .menu__link {
-                font-size: 24px;
+                color: var(--text-color);
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    color: var(--primary-color);
+                }
+
+                &:hover .menu__link-arrow {
+                    fill: var(--primary-color);
+                    transform: rotate(180deg);
+                }
+            }
+
+            .menu__link-arrow {
+                width: 10px;
+                height: 6px;
+                transition: all 0.2s ease-in-out;
             }
         }
     }
@@ -61,7 +78,7 @@
         &__burger {
             display: block;
         }
-        
+
         &__menu {
             position: absolute;
             top: 100%;
@@ -75,8 +92,25 @@
             opacity: 0;
             pointer-events: none;
 
+
             .menu__link {
-                font-size: 24px;
+                color: var(--text-color);
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    color: var(--primary-color);
+                }
+
+                &:hover .menu__link-arrow {
+                    fill: var(--primary-color);
+                    transform: rotate(180deg);
+                }
+            }
+
+            .menu__link-arrow {
+                width: 10px;
+                height: 6px;
+                transition: all 0.2s ease-in-out;
             }
         }
     }
