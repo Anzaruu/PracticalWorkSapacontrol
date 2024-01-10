@@ -1,34 +1,98 @@
-.text-info {
-    margin: 0;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 160%;
+@media screen and (min-width: 300px) and (max-width: 700px) {
+    .text-info {
+        margin: 0;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
 
-    &_md {
-        font-size: 24px;
+        &_md {
+            font-size: 24px;
+        }
+
+        &_bold {
+            font-weight: 600;
+        }
     }
 
-    &_bold{
-        font-weight: 600;
+    .text {
+        margin: 0;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 175%;
+    }
+
+    .text-addiction {
+        margin: 0;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
     }
 }
 
-.text {
-    margin: 0;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 175%;
+@media screen and (min-width: 700px) and (max-width: 1200px) {
+    .text-info {
+        margin: 0;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+
+        &_md {
+            font-size: 24px;
+        }
+
+        &_bold {
+            font-weight: 600;
+        }
+    }
+
+    .text {
+        margin: 0;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 175%;
+    }
+
+    .text-addiction {
+        margin: 0;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+    }
 }
 
-.text-addiction {
-    margin: 0;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-}
+@media screen and (min-width: 1200px) and (max-width: 1700px) {
+    .text-info {
+        margin: 0;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
 
-@media screen and (min-width: 300px) and (max-width: 700px){}
-@media screen and (min-width: 700px) and (max-width: 1200px){}
-@media screen and (min-width: 1200px) and (max-width: 1700px){}
+        &_md {
+            font-size: 24px;
+        }
+
+        &_bold {
+            font-weight: 600;
+        }
+    }
+
+    .text {
+        margin: 0;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 175%;
+    }
+
+    .text-addiction {
+        margin: 0;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+    }
+}

@@ -4,12 +4,12 @@ const menuInit = () => {
     if (!toggleMenu) return
 
     const menu = document.querySelector('.nav__menu')
-    const contacts = document.querySelector('.header__contacts')
+    const phone = document.querySelector('.header__phone')
 
     const handleToggleMenu = () => {
         toggleMenu.classList.toggle('toggle-menu_active')
         menu.classList.toggle('menu_active')
-        contacts.classList.toggle('contacts_active')
+        phone.classList.toggle('phone_active')
     }
 
     toggleMenu.addEventListener('click', handleToggleMenu)

@@ -29,18 +29,6 @@
 
     .phone {
         display: none;
-        color: var(--text-color-addicional);
-
-        &__link {
-            color: var(--text-color);
-            width: auto;
-            height: auto;
-            transition: all 0.2s ease-in-out;
-
-            &:hover {
-                color: var(--primary-color);
-            }
-        }
     }
 }
 
